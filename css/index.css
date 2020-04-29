@@ -7,7 +7,13 @@ body{
     color: #666;
     line-height: 1.5;
     font-family: -apple-system, Helvetica, sans-serif;
-    background: #eee;
+}
+img{
+    vertical-align: top;
+}
+a{
+    color: #666;
+    text-decoration: none;
 }
 ul{
     list-style: none;
@@ -31,6 +37,7 @@ ul{
 }
 .app ul li:nth-child(1) img{
     width: 10px;
+    vertical-align: middle;
 }
 .app ul li:nth-child(2){
     width: 10%;
@@ -48,28 +55,140 @@ ul{
 /*搜索栏*/
 .search-wrap{
     width: 100%;
-    position: relative;
+    position: fixed;
+    min-width: 320px;
+    max-width:640px;
+    width: 100%;
     overflow: hidden;
+    z-index: 5;
+
 }
 .search-btn{
      position: absolute;
      top: 0;
      left: 0;
-     background: pink;
      width: 40px;
      height: 44px;
  }
+.search-btn::before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
 .search-login{
     position: absolute;
     top: 0;
     right: 0;
-    background: pink;
     width: 40px;
     height: 44px;
+    color: #fff;
+    line-height: 44px;
 }
 .search{
     height: 30px;
     margin: 7px 50px;
     background: #fff;
     border-radius: 15px;
+    position: relative;
+}
+.search .jd-icon{
+    height: 15px;
+    width: 20px;
+    position: absolute;
+    top:8px;
+    left: 13px;
+    background: url(../images/jd.png) no-repeat;
+    background-size: 20px 15px;
+}
+.search .jd-icon::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 15px;
+    background: #ccc;
+    top: 0;
+    right: -8px;
+    display: block;
+}
+.search .sou{
+    position: absolute;
+    top:8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    background-size:200px auto;
+}
+/*主体内容部分*/
+
+/*轮播图*/
+.slider img{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+/*康永品牌日*/
+.bland{
+    position: relative;
+    margin-top: -10px;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+.bland div{
+    float: left;
+    width: 33.33%;
+}
+.bland div img{
+    width: 100%;
+}
+/*nav导航栏*/
+nav{
+    width: 100%;
+    margin: 10px 0;
+    clear: both;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    line-height: 0;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+nav a{
+    float: left;
+    text-align: center;
+    width: 20%;
+}
+nav a img{
+    width: 40px;
+    margin: 10px 0;
+}
+nav a span{
+    display: block;
+}
+
+/*新闻模块*/
+.news{
+    margin-top: 20px;
+}
+.news a{
+    float: left;
+}
+.news a:nth-child(1){
+    width: 50%;
+}
+.news a:nth-child(n+2){
+    width: 25%;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+}
+.news a img{
+    width: 100%;
 }
